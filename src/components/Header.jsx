@@ -76,13 +76,19 @@ export default function Header() {
               </li>
             </ul>
           </nav>
-          
-          {/* 4. Thay đổi nội dung dựa trên trạng thái user */}
           <div className="header__action">
   {user ? (
     <div className="header__user-info">
+      {/* Nút quay lại trang Quản lý chỉ hiện cho Admin */}
+      {user.role === 'admin' && (
+        <Link to="/admin/dashboard" className="btn btn--admin-nav">
+          Admin Panel
+        </Link>
+      )}
+
       <span className="user-name">Chào, {user.full_name}</span>
-      <button onClick={handleLogout} className="btn btn--logout">
+      
+      <button onClick={handleLogout} className="btn header__action--signup btn--logout-custom">
         Log Out
       </button>
     </div>

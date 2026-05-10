@@ -1,0 +1,131 @@
+:root {
+    --admin-primary: #007bff;
+    --admin-bg: #f4f7f9;
+    --sidebar-width: 260px;
+    --text-main: #2c3e50;
+}
+
+.admin-layout {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--admin-bg);
+}
+
+/* Sidebar */
+.admin-sidebar {
+    width: var(--sidebar-width);
+    background: #fff;
+    border-right: 1px solid #e0e0e0;
+    padding: 20px;
+}
+
+.sidebar-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.admin-logo {
+    width: 60px;
+    margin-bottom: 10px;
+}
+
+.nav-item {
+    width: 100%;
+    padding: 12px 20px;
+    margin-bottom: 8px;
+    border: none;
+    background: transparent;
+    text-align: left;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--text-main);
+    transition: all 0.3s;
+}
+
+.nav-item.active {
+    background-color: var(--admin-primary);
+    color: #fff;
+}
+
+/* Main Content */
+.admin-main {
+    flex: 1;
+    padding: 30px;
+}
+
+.admin-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.admin-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    padding: 20px;
+}
+
+/* Table Style */
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table th {
+    text-align: left;
+    padding: 15px;
+    background: #f8f9fa;
+    color: #666;
+    font-size: 1.4rem;
+}
+
+.admin-table td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    font-size: 1.4rem;
+}
+
+/* Role/Status Badges */
+.badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.badge-admin { background: #fee2e2; color: #ef4444; }
+.badge-doctor { background: #dcfce7; color: #22c55e; }
+.badge-patient { background: #dbeafe; color: #3b82f6; }
+.badge-pending { background: #fef9c3; color: #ca8a04; }
+
+.font-bold { font-weight: 600; }
+.btn--admin-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Khoảng cách giữa dấu chấm và chữ */
+    color: #b9b9b9 !important;
+    font-size: 1.6rem; /* Điều chỉnh kích thước theo ý bạn */
+    font-weight: 700; /* Làm chữ in đậm giống mẫu */
+    text-decoration: none;
+    background: transparent; /* Bỏ nền vì trong ảnh là dạng text link */
+    padding: 0;
+    transition: opacity 0.3s;
+}
+
+/* Tạo dấu chấm tròn phía trước */
+.btn--admin-nav::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.btn--admin-nav:hover {
+    opacity: 0.8;
+    color: #FFFFFF !important;
+}

@@ -9,6 +9,7 @@ import DoctorDetail from './pages/DoctorDetail';
 import About from './pages/About';
 import Services from './pages/Services';
 import AllServices from './pages/AllServices';
+import AdminDashboard from './pages/AdminDashboard';
 
 function App() {
   return (
@@ -27,6 +28,8 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/all-services" element={<AllServices />} />
+        <Route path="/admin/dashboard" element={<AdminDashboard />} />
+        
       </Routes>
 
       <Footer />
