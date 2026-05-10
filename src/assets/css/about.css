@@ -1,0 +1,133 @@
+/* =========================================
+   TRANG GIỚI THIỆU (ABOUT PAGE)
+========================================= */
+.about-page {
+  
+  color: #333;
+  line-height: 1.6;
+}
+
+/* 1. Phần Hero Banner (Ảnh bìa lớn) */
+.about-hero {
+  /* Bạn có thể dùng hero-1 hoặc hero-2 có sẵn trong thư mục của bạn */
+  background: linear-gradient(rgba(11, 59, 96, 0.8), rgba(24, 144, 255, 0.6)), url('/assets/img/hero-1.jpg') center/cover;
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.about-hero h1 {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.about-hero p {
+  font-size: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+/* 2. Phần Giới thiệu chung */
+.about-intro {
+  padding: 60px 0;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-intro h2 {
+  color: #0b3b60;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+/* 3. Tầm nhìn & Sứ mệnh (Mission & Vision) */
+.mv-container {
+  display: flex;
+  gap: 30px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+/* =========================================
+   ĐỒNG BỘ CÁC Ô: TẦM NHÌN & SỨ MỆNH
+========================================= */
+.mv-box {
+  flex: 1;
+  min-width: 300px;
+  background: #fff; /* Đổi về nền trắng hoàn toàn */
+  padding: 40px 30px;
+  border-radius: 12px; /* Bo góc 12px đồng bộ toàn trang */
+  border: 1px solid #edf2f7; /* Viền xám nhạt thanh lịch */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Đổ bóng nhẹ */
+  transition: all 0.3s ease; /* Hiệu ứng mượt mà */
+}
+
+/* Hiệu ứng khi di chuột vào ô (giống thẻ Home) */
+.mv-box:hover {
+  transform: translateY(-10px); /* Nảy lên */
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12); /* Bóng đậm hơn */
+  border-color: #1890ff; /* Viền sáng màu xanh y tế */
+}
+
+.mv-box h3 {
+  color: #1890ff;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+/* =========================================
+   ĐỒNG BỘ CÁC Ô: GIÁ TRỊ CỐT LÕI
+========================================= */
+.value-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px; /* Bo góc 12px */
+  border: 1px solid #edf2f7; /* Viền xám nhạt */
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+/* Hiệu ứng khi di chuột vào ô */
+.value-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  border-color: #1890ff;
+}
+
+.value-card i {
+  font-size: 40px;
+  color: #1890ff;
+  margin-bottom: 15px;
+}
+
+.value-card h4 {
+  color: #0b3b60;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* 5. Thống kê (Statistics) */
+.stats-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.stat-item h2 {
+  font-size: 48px;
+  color: #1890ff;
+  margin-bottom: 5px;
+}
+
+.stat-item p {
+  font-size: 16px;
+  color: #5a6570;
+  font-weight: 600;
+  text-transform: uppercase;
+}

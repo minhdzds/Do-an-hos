@@ -1,0 +1,723 @@
+/* =========================================
+   TRANG DỊCH VỤ (SERVICES PAGE)
+========================================= */
+.services-page {
+  font-family: 'Inter', sans-serif;
+  color: #333;
+  padding-bottom: 60px;
+  background-color: #f8fbff; /* Nền xanh siêu nhạt tạo cảm giác y tế */
+}
+
+/* 1. Phần Giới thiệu (Intro Section) */
+.service-intro {
+  background: linear-gradient(135deg, #0b3b60, #1890ff);
+  color: rgb(255, 255, 255);
+  padding: 60px 20px;
+  text-align: center;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  margin-bottom: 50px;
+}
+
+.service-intro h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.service-intro p {
+  font-size: 18px;
+  max-width: 700px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+/* 2. Gói Chăm sóc sức khỏe (Health Packages) */
+.section-title {
+  text-align: center;
+  color: #0b3b60;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+/* =========================================
+   CAROUSEL TỰ CHẾ CHO CÁC GÓI KHÁM
+========================================= */
+.slider-wrapper {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.package-grid {
+  display: flex;
+  gap: 25px;
+  overflow-x: auto; /* Cho phép cuộn ngang */
+  scroll-behavior: smooth; /* Cuộn mượt mà */
+  padding: 10px 5px 30px 5px; /* Giữ padding để thẻ nảy lên không bị cắt bóng */
+  
+  /* Ẩn thanh cuộn xấu xí mặc định của trình duyệt */
+  scrollbar-width: none; /* Cho Firefox */
+  -ms-overflow-style: none;  /* Cho IE/Edge */
+}
+
+.package-grid::-webkit-scrollbar {
+  display: none; /* Ẩn thanh cuộn cho Chrome/Safari */
+}
+
+.package-card {
+  /* Hiển thị đúng 4 thẻ 1 hàng, trừ đi khoảng trống gap */
+  min-width: calc(25% - 18.75px);
+  flex-shrink: 0; /* Ép thẻ không bị co rúm lại */
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  border: 1px solid #eef2f6;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.package-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+}
+
+/* Các nút mũi tên Trái - Phải */
+.slider-btn {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  background: white;
+  border: 1px solid #eef2f6;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10;
+  color: #555;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.slider-btn:hover {
+  color: #00bfff;
+  box-shadow: 0 6px 16px rgba(0,191,255,0.2);
+}
+
+.slider-btn.left {
+  left: -20px; /* Thò ra ngoài rìa bên trái */
+}
+
+.slider-btn.right {
+  right: -20px; /* Thò ra ngoài rìa bên phải */
+}
+
+/* Responsive cho màn hình nhỏ hơn */
+@media (max-width: 1024px) {
+  .package-card { min-width: calc(33.333% - 17px); } /* Hiện 3 thẻ */
+}
+@media (max-width: 768px) {
+  .package-card { min-width: calc(50% - 12.5px); } /* Hiện 2 thẻ */
+}
+@media (max-width: 480px) {
+  .package-card { min-width: 100%; } /* Hiện 1 thẻ trên điện thoại */
+}
+
+.package-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.package-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.package-title {
+  font-size: 18px;
+  color: #0b3b60;
+  font-weight: 700;
+  margin-bottom: 10px;
+  line-height: 1.4;
+  /* Cắt chữ nếu dài quá 2 dòng */
+  display: -webkit-box;
+  overflow: hidden;
+}
+
+.package-hospital {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.package-price {
+  color: #f5a623;
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-book-cyan {
+  margin-top: auto;
+  background-color: #00bfff; /* Màu xanh sáng giống Medpro */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-book-cyan:hover {
+  background-color: #00a0d6;
+}
+
+/* 3. Dịch vụ nổi bật (Outstanding Features - Accordion) */
+.features-container {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  background: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+}
+
+.features-img-col {
+  flex: 1;
+}
+
+.features-img-col img {
+  width: 100%;
+  max-width: 500px;
+  display: block;
+  margin: 0 auto;
+}
+
+.features-accordion-col {
+  flex: 1;
+}
+
+.features-accordion-col h2 {
+  color: #0b3b60;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.accordion-item {
+  border-bottom: 1px solid #eee;
+  padding: 15px 0;
+}
+
+.accordion-header {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.accordion-header:hover {
+  color: #00bfff;
+}
+
+.accordion-num {
+  background-color: #00bfff;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.accordion-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0b3b60;
+  flex: 1;
+}
+
+.accordion-icon {
+  font-size: 14px;
+  color: #888;
+  transition: transform 0.3s;
+}
+
+.accordion-content {
+  padding-left: 47px;
+  padding-right: 20px;
+  margin-top: 10px;
+  color: #666;
+  font-size: 15px;
+  line-height: 1.6;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out, opacity 0.3s ease;
+  opacity: 0;
+}
+
+/* Class kích hoạt khi mở Accordion */
+.accordion-item.active .accordion-content {
+  max-height: 200px; /* Số đủ lớn để chứa nội dung */
+  opacity: 1;
+  padding-bottom: 10px;
+}
+
+.accordion-item.active .accordion-icon {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 900px) {
+  .features-container {
+    flex-direction: column;
+  }
+}
+/* =========================================
+   GIỚI THIỆU APP (APP PROMOTION SECTION)
+========================================= */
+.app-intro-container {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  padding: 60px 0;
+  margin-bottom: 40px;
+}
+
+.app-text-col {
+  flex: 1;
+}
+
+.app-text-col h2 {
+  font-size: 34px;
+  color: #0b3b60;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.app-text-col h2 span {
+  color: #00bfff;
+}
+
+.app-text-col p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 30px;
+  line-height: 1.8;
+}
+
+/* Các nút tải App */
+.download-btns {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.download-btns img {
+  height: 45px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.download-btns img:hover {
+  transform: translateY(-5px);
+}
+
+.app-img-col {
+  flex: 1;
+  text-align: center;
+}
+
+.app-img-col img {
+  width: 100%;
+  max-width: 550px;
+  /* Hiệu ứng trôi nổi nhẹ nhàng cho hình minh họa */
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+@media (max-width: 900px) {
+  .app-intro-container {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .download-btns {
+    justify-content: center;
+  }
+}
+/* =========================================
+   HIỆU ỨNG APP BANNER TRÀN VIỀN (GIỐNG ẢNH 100%)
+========================================= */
+.app-overlap-container {
+  padding: 100px 0; /* Tạo không gian trên dưới để điện thoại không bị cắt mất */
+}
+
+.app-blue-box {
+  background-color: #3182ce; /* Màu xanh y hệt trong ảnh của bạn */
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  min-height: 350px;
+  position: relative;
+  box-shadow: 0 15px 35px rgba(49, 130, 206, 0.2);
+}
+
+.app-phone-col {
+  width: 45%;
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.app-phone-col img {
+
+  width: 380px; /* Bạn có thể tăng số này lên (ví dụ 400px, 420px) nếu muốn lớn hơn nữa */
+  
+  /* 2. SỬ DỤNG MARGIN ÂM ĐỂ TẠO HIỆU ỨNG TRÀN VIỀN (DÍCH LÊN TRÊN VÀ THÒ XUỐNG DƯỚI) */
+  margin-top: -100px; /* Thò lên trên */
+  margin-bottom: -60px; /* Thò xuống dưới */
+  
+  /* 3. CÁC THÔNG SỐ KHÁC */
+  max-width: 100%; /* Đảm bảo không bị tràn trên màn hình nhỏ */
+  height: auto; /* Giữ tỷ lệ khung hình */
+  object-fit: contain;
+  filter: drop-shadow(10px 20px 30px rgba(0,0,0,0.25)); /* Đổ bóng 3D cực xịn */
+  
+  /* Thêm hiệu ứng trôi nổi nhẹ nhàng cho hình minh họa giống Medpro */
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+.app-text-col {
+  width: 55%;
+  padding: 50px 50px 50px 0;
+  color: white;
+}
+
+.app-text-col h2 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  color: #ffffff;
+}
+
+.app-text-col p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  opacity: 0.95;
+  color: #ffffff;
+  opacity: 0.95;
+}
+
+.app-store-btns {
+  display: flex;
+  gap: 15px;
+}
+
+.app-store-btns img {
+  height: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.app-store-btns img:hover {
+  transform: translateY(-4px);
+}
+
+/* Responsive cho màn hình nhỏ (Điện thoại/Tablet) */
+@media (max-width: 900px) {
+  .app-blue-box {
+    flex-direction: column;
+    text-align: center;
+    padding: 0 20px 40px 20px;
+    margin-top: 100px;
+  }
+  .app-phone-col {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .app-phone-col img {
+    position: relative;
+    top: -80px;
+    bottom: auto;
+    height: 400px;
+    margin-bottom: -80px;
+  }
+  .app-text-col {
+    width: 100%;
+    padding: 0;
+  }
+  .app-store-btns {
+    justify-content: center;
+  }
+}
+/* =========================================
+   ALL SERVICES - BỐ CỤC DANH SÁCH & CHI TIẾT (SPLIT LAYOUT)
+========================================= */
+.all-services-split {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start; /* Quan trọng để cột phải có thể sticky */
+  margin-top: 30px;
+}
+
+/* --- CỘT TRÁI: DANH SÁCH DỊCH VỤ --- */
+.services-list-col {
+  flex: 6.5; /* Chiếm 65% chiều rộng */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.service-list-card {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  border: 1px solid #eef2f6;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hiệu ứng hover hoặc khi thẻ đang được chọn (Active) */
+.service-list-card:hover, 
+.service-list-card.active {
+  border-color: #00bfff;
+  box-shadow: 0 8px 20px rgba(0, 191, 255, 0.1);
+}
+
+.service-list-img {
+  width: 90px;
+  height: 90px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-right: 20px;
+  background-color: #f0f7ff; /* Màu nền phụ nếu ảnh là icon trong suốt */
+}
+
+.service-list-info {
+  flex: 1;
+}
+
+.service-list-title {
+  font-size: 18px;
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.service-list-hospital {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 8px;
+}
+
+.service-list-price {
+  font-size: 16px;
+  color: #f5a623; /* Màu cam giống ảnh Medpro */
+  font-weight: 700;
+}
+
+.service-list-action {
+  margin-left: 15px;
+}
+
+/* --- CỘT PHẢI: CHI TIẾT DỊCH VỤ & TẢI APP --- */
+.service-detail-col {
+  flex: 3.5; /* Chiếm 35% chiều rộng */
+  position: sticky;
+  top: 30px; /* Ghim cố định cách top 30px khi cuộn trang */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.service-detail-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  border: 1px solid #eef2f6;
+}
+
+.service-detail-image {
+  width: 100%;
+  height: 200px;
+  border-radius: 12px;
+  object-fit: contain;
+  margin-bottom: 20px;
+  background-color: #fcfcfc;
+}
+
+.service-detail-title {
+  color: #00bfff; /* Chữ màu xanh sáng */
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.service-detail-address {
+  font-size: 13px;
+  color: #888;
+  line-height: 1.6;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+/* Đánh giá sao (Rating) */
+.service-rating {
+  color: #f5a623;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.service-rating span {
+  color: #333;
+  font-weight: bold;
+  margin-right: 5px;
+}
+/* =========================================
+   HỘP TẢI APP (CỘT BÊN PHẢI)
+========================================= */
+.app-download-card {
+  background-color: #00bfff; /* Màu nền xanh Cyan */
+  border-radius: 12px;
+  padding: 25px 20px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 191, 255, 0.2);
+}
+
+.app-download-card h4 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.app-download-btns {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+/* Hiển thị ảnh gốc, chỉ thêm hiệu ứng nảy lên */
+.app-download-btns img {
+  height: 42px; /* Chiều cao chuẩn cho các nút tải App */
+  width: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  object-fit: contain;
+  border-radius: 6px; /* Bo góc nhẹ nương theo ảnh gốc */
+}
+
+/* Hiệu ứng nảy lên khi di chuột */
+.app-download-btns img:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* Responsive cho màn hình nhỏ */
+@media (max-width: 900px) {
+  .all-services-split {
+    flex-direction: column-reverse; /* Đẩy phần chi tiết lên trên trên mobile */
+  }
+  .service-detail-col {
+    position: relative;
+    top: 0;
+  }
+}
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px; /* Khoảng cách giữa các nút rộng rãi hơn một chút */
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.page-node {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px; /* Bo góc mềm mại giống ảnh */
+  border: none; /* Bỏ viền cứng đi để trông sang hơn */
+  background-color: #fff;
+  color: #00bfff; /* Chữ số màu xanh sáng */
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03); /* Đổ bóng xám siêu nhẹ tạo cảm giác nổi 3D */
+  transition: all 0.3s ease;
+}
+
+/* Đổi màu icon mũi tên (< và >) thành xám nhạt như trong ảnh */
+.page-node i {
+  color: #a0aab5; 
+  font-size: 14px;
+}
+
+/* Hiệu ứng khi di chuột vào nút (nảy nhẹ lên) */
+.page-node:hover:not(.disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 191, 255, 0.15);
+}
+
+/* HIỆU ỨNG CHO TRANG ĐANG CHỌN (ACTIVE) */
+.page-node.active {
+  background-color: #00bfff; /* Nền xanh */
+  color: #fff; /* Chữ trắng */
+  box-shadow: 0 6px 15px rgba(0, 191, 255, 0.35); /* Đổ bóng màu xanh tỏa ra xung quanh */
+  font-weight: bold;
+  pointer-events: none; /* Không cho bấm lại trang đang đứng */
+}
+
+/* Nút bị vô hiệu hóa (khi ở trang 1 thì không lùi được nữa) */
+.page-node.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}

@@ -1,0 +1,145 @@
+/* =========================================
+   NÚT LỌC CHUYÊN KHOA (FILTER BUTTONS)
+========================================= */
+.filter-btn {
+  padding: 10px 24px;
+  min-width: 140px;
+  border-radius: 50px;
+  border: 1px solid #e2e8f0;
+  background-color: #fff;
+  color: #4a5568;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.filter-btn:hover {
+  border-color: #3182ce;
+  color: #3182ce;
+}
+
+.filter-btn.active {
+  background-color: #3182ce;
+  color: #fff;
+  border-color: #3182ce;
+  box-shadow: 0 4px 10px rgba(49, 130, 206, 0.3);
+}
+
+/* =========================================
+   NÚT ĐẶT LỊCH (BOOK BUTTON)
+========================================= */
+.book-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  width: 100%;
+  background-color: #3182ce;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(49, 130, 206, 0.2);
+}
+
+.book-btn:hover {
+  background-color: #2b6cb0;
+  box-shadow: 0 6px 14px rgba(49, 130, 206, 0.4);
+  transform: translateY(-2px);
+}
+.doctors-heading {
+  text-align: center;
+  color: #0b3b60; /* Màu xanh đen (Navy) giống hệt trong ảnh */
+  font-size: 46px; /* Kích thước chữ to, nổi bật */
+  font-weight: 800; /* Độ dày chữ lớn */
+  margin-bottom: 15px;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+  letter-spacing: -1px; /* Khoảng cách giữa các chữ thu hẹp lại một chút cho sang trọng */
+}
+
+.doctors-subheading {
+  text-align: center;
+  color: #5a6570; /* Màu xám thanh lịch */
+  font-size: 18px; /* Chữ to vừa phải dễ đọc */
+  font-weight: 400; /* Nét chữ thanh mảnh */
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+/* Container chứa ảnh để khi ảnh phóng to không bị tràn ra ngoài */
+.doctor-img-container {
+  width: 100%;
+  height: 250px;
+  overflow: hidden; /* Quan trọng: Giữ ảnh không tràn khi zoom */
+  position: relative;
+}
+
+.doctor-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease; /* Hiệu ứng mượt mà */
+}
+
+/* Hiệu ứng Highlight cho toàn bộ thẻ */
+.doctor-card {
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid #edf2f7;
+}
+
+/* Khi di chuột vào thẻ (Hover) */
+.doctor-card:hover {
+  transform: translateY(-10px); /* Thẻ nảy lên */
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12); /* Đổ bóng đậm hơn */
+}
+
+/* Ảnh phóng to nhẹ khi hover */
+.doctor-card:hover .doctor-img-container img {
+  transform: scale(1.1);
+}
+
+/* Hiệu ứng làm sáng ảnh một chút */
+.doctor-card:hover .doctor-img-container::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+}
+/* =========================================
+   NÚT QUAY LẠI (BACK BUTTON)
+========================================= */
+/* =========================================
+   NÚT QUAY LẠI (BACK BUTTON) - NỀN XANH CHỮ TRẮNG
+========================================= */
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; 
+  padding: 8px 20px;
+  background-color: #3182ce; /* Nền màu xanh đặc trưng của trang web */
+  color: #fff; /* Chữ màu trắng */
+  border: none; /* Bỏ viền đi cho gọn gàng */
+  border-radius: 50px; 
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 10px rgba(24, 144, 255, 0.2); /* Đổ bóng nhẹ màu xanh */
+}
+
+/* Hiệu ứng khi di chuột (Hover) */
+.back-btn:hover {
+  background-color: #096dd9; /* Đổi sang màu xanh đậm hơn khi di chuột */
+  transform: translateX(-5px); /* Vẫn giữ hiệu ứng trượt sang trái báo hiệu quay lại */
+  box-shadow: 0 6px 14px rgba(24, 144, 255, 0.4); /* Bóng đậm hơn một chút */
+}
