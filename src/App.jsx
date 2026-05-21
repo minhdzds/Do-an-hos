@@ -10,6 +10,9 @@ import About from './pages/About';
 import Services from './pages/Services';
 import AllServices from './pages/AllServices';
 import AdminDashboard from './pages/AdminDashboard';
+import DoctorDashboard from './pages/DoctorDashboard'; 
+import BookingConfirmation from './pages/BookingConfirmation';
+import Profile from './pages/Profile';
 
 function App() {
   return (
@@ -29,7 +32,10 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/all-services" element={<AllServices />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
-        
+        <Route path="/doctor-dashboard" element={<DoctorDashboard />} />
+        <Route path="/booking/confirmation" element={<BookingConfirmation />} />
+        <Route path="/profile" element={<Profile />} />
+
       </Routes>
 
       <Footer />

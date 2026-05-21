@@ -81,8 +81,13 @@ export default function Header() {
     <div className="header__user-info">
       {/* Nút quay lại trang Quản lý chỉ hiện cho Admin */}
       {user.role === 'admin' && (
-        <Link to="/admin/dashboard" className="btn btn--admin-nav">
-          Admin Panel
+  <Link to="/admin/dashboard" className="btn--admin-nav" onClick={() => setIsDropdownOpen(false)}>
+    Admin Panel
+  </Link>
+)}
+{user.role === 'doctor' && (
+        <Link to="/doctor-dashboard" className="btn--admin-nav">
+          Doctor Panel
         </Link>
       )}
 

@@ -143,3 +143,158 @@
   transform: translateX(-5px); /* Vẫn giữ hiệu ứng trượt sang trái báo hiệu quay lại */
   box-shadow: 0 6px 14px rgba(24, 144, 255, 0.4); /* Bóng đậm hơn một chút */
 }
+/* Layout Trang Chi Tiết Bác Sĩ (Mới) */
+.doc-detail-page {
+    padding: 60px 0;
+    background-color: #f7fafc; /* Nền xám nhạt để nổi bật card */
+}
+
+.doc-detail-layout {
+    display: flex;
+    gap: 50px;
+    background: #fff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    align-items: center; /* Căn giữa ảnh và chữ theo chiều dọc */
+}
+
+/* Cột Thông Tin (Trái) */
+.doc-detail-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.doc-name {
+    font-size: 3.6rem;
+    color: #1a202c;
+    font-weight: 800;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.doc-title-specialty {
+    font-size: 1.8rem;
+    color: #4a5568;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.highlight-text {
+    color: #3182ce; /* Màu xanh thương hiệu */
+    font-weight: 600;
+}
+
+.doc-contact-block {
+    font-size: 1.5rem;
+    color: #718096;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.doc-bio-section {
+    margin-bottom: 30px;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    color: #2d3748;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.doc-bio-text {
+    font-size: 1.6rem;
+    color: #5a6570;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+/* Căn chỉnh nút Book cụ thể cho trang chi tiết */
+.doc-action-block {
+    width: 280px; /* Độ rộng của nút */
+}
+
+.doc-detail-book {
+    width: 100%;
+    margin-top: 0;
+    font-size: 1.6rem;
+    padding: 15px 0;
+}
+
+/* Cột Ảnh (Phải) */
+.doc-detail-image-container {
+    width: 380px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.doc-detail-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    object-fit: cover;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .doc-detail-layout {
+        flex-direction: column-reverse; /* Đưa ảnh lên trên chữ */
+        gap: 30px;
+        padding: 30px;
+    }
+
+    .doc-detail-image-container {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .doc-name {
+        font-size: 2.8rem;
+    }
+}
+/* =========================================
+   SIMILAR SPECIALISTS SECTION
+========================================= */
+.similar-doctors-section {
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.similar-title {
+    font-size: 2.4rem;
+    color: #2d3748;
+    font-weight: 700;
+    margin-bottom: 30px;
+    border-left: 4px solid #3182ce;
+    padding-left: 10px;
+}
+
+.similar-doctors-grid {
+    display: grid;
+    /* Tự động chia cột: tối thiểu 220px/cột, tối đa tự lấp đầy khoảng trống */
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 30px;
+}
+
+/* Tinh chỉnh lại text bên trong thẻ card cho cân đối */
+.doc-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.doc-info h4 {
+    font-size: 1.6rem;
+    color: #1a202c;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.doc-info p {
+    font-size: 1.4rem;
+    color: #718096;
+}

@@ -1,0 +1,219 @@
+/* src/assets/css/bookingConfirmation.css */
+.confirm-page {
+    background-color: #f4f7f9;
+    min-height: 100vh;
+    padding: 60px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.confirm-container {
+    max-width: 1050px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+/* Responsive cho điện thoại */
+@media (max-width: 900px) {
+    .confirm-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.confirm-left-col, .confirm-right-col {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 43, 93, 0.05);
+    padding: 35px;
+}
+
+/* ================= LEFT COLUMN ================= */
+.confirm-title-main {
+    font-size: 24px;
+    color: #0b3b60;
+    font-weight: 800;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #eef2f6;
+    padding-bottom: 15px;
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #4a5568;
+    margin-bottom: 8px;
+}
+
+.form-label i {
+    color: #3182ce;
+    margin-right: 8px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #cbd5e0;
+    border-radius: 8px;
+    font-size: 15px;
+    color: #2d3748;
+    background-color: #f8fafc;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #3182ce;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.15);
+}
+
+.form-input:disabled {
+    background-color: #edf2f7;
+    color: #a0aec0;
+    cursor: not-allowed;
+    border-color: #e2e8f0;
+}
+
+/* TRẠNG THÁI LỖI (BÁO ĐỎ SỐ ĐIỆN THOẠI) */
+.form-input.input-error {
+    border-color: #e53e3e;
+    background-color: #fff5f5;
+}
+
+.form-input.input-error:focus {
+    box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.15);
+}
+
+.error-msg {
+    color: #e53e3e;
+    font-size: 13.5px;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 500;
+}
+
+.notes-textarea {
+    resize: vertical;
+    min-height: 110px;
+    background-color: #fff;
+}
+
+/* ================= RIGHT COLUMN ================= */
+.summary-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 25px;
+    color: #0b3b60;
+}
+
+.summary-card-header h3 {
+    font-size: 20px;
+    margin: 0;
+    font-weight: 700;
+}
+
+.summary-item-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 15px;
+    padding: 15px;
+    background: #f9fbfd;
+    border: 1px solid #eef2f6;
+    border-radius: 12px;
+}
+
+.summary-icon-box {
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    background: #e6f0fa;
+    color: #3182ce;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.summary-text-box .sub-label {
+    font-size: 13px;
+    color: #718096;
+    margin-bottom: 4px;
+}
+
+.summary-text-box .main-value {
+    font-size: 16px;
+    color: #2d3748;
+    font-weight: 700;
+}
+
+/* ================= BUTTONS ================= */
+.confirm-action-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.btn-back-outline {
+    flex: 1;
+    padding: 14px;
+    background: transparent;
+    border: 2px solid #cbd5e0;
+    color: #4a5568;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-back-outline:hover {
+    background: #f7fafc;
+    border-color: #a0aec0;
+}
+
+.btn-confirm-primary {
+    flex: 2;
+    padding: 14px;
+    background: #3182ce;
+    border: none;
+    color: #fff;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(49, 130, 206, 0.3);
+    transition: 0.3s;
+}
+
+.btn-confirm-primary:hover {
+    background: #2b6cb0;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(49, 130, 206, 0.4);
+}
+
+.btn-confirm-primary:disabled {
+    background: #a0aec0;
+    box-shadow: none;
+    cursor: not-allowed;
+    transform: none;
+}
+/* Định dạng kích thước cho các icon SVG mới */
+.summary-svg-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    display: block;
+}

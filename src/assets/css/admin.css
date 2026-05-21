@@ -1,3 +1,4 @@
+
 :root {
     --admin-primary: #007bff;
     --admin-bg: #f4f7f9;
@@ -105,27 +106,28 @@
 .btn--admin-nav {
     display: flex;
     align-items: center;
-    gap: 8px; /* Khoảng cách giữa dấu chấm và chữ */
+    justify-content: flex-start; /* Ép nội dung về sát bên trái */
+    gap: 8px; 
     color: #b9b9b9 !important;
-    font-size: 1.6rem; /* Điều chỉnh kích thước theo ý bạn */
-    font-weight: 700; /* Làm chữ in đậm giống mẫu */
+    font-size: 1.6rem; 
+    font-weight: 700; 
     text-decoration: none;
-    background: transparent; /* Bỏ nền vì trong ảnh là dạng text link */
+    background: transparent;
     padding: 0;
-    transition: opacity 0.3s;
+    width: 100%; /* Đảm bảo nút chiếm hết chiều ngang để căn trái có tác dụng */
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s;
+    text-align: left; /* Căn lề chữ về bên trái */
 }
 
-/* Tạo dấu chấm tròn phía trước */
+/* Nếu bạn dùng dấu chấm phía trước */
 .btn--admin-nav::before {
     content: "";
+    display: inline-block;
     width: 6px;
     height: 6px;
     background-color: #FFFFFF;
     border-radius: 50%;
-    display: inline-block;
-}
-
-.btn--admin-nav:hover {
-    opacity: 0.8;
-    color: #FFFFFF !important;
+    flex-shrink: 0; /* Không cho dấu chấm bị bóp méo */
 }

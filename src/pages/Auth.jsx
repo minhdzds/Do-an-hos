@@ -69,7 +69,8 @@ export default function Auth() {
         if (data.user.role === 'admin') {
           navigate('/admin/dashboard');
         } else if (data.user.role === 'doctor') {
-          navigate('/doctor/dashboard');
+          // SỬA LẠI DÒNG DƯỚI ĐÂY (bỏ dấu gạch chéo, thay bằng gạch ngang)
+          navigate('/doctor-dashboard'); 
         } else {
           navigate('/booking'); 
         }
