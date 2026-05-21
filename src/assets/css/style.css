@@ -763,3 +763,44 @@ a {
   font-size: 1.4rem;
   line-height: 1.86;
 }
+/* Thiết lập bố cục chung cho vùng thông tin user */
+.header__user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Khối liên kết bọc ngoài Avatar và Tên */
+.header__profile-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none; /* Bỏ gạch chân */
+  color: inherit;        /* Giữ nguyên màu chữ mặc định */
+  transition: opacity 0.2s ease;
+}
+
+.header__profile-link:hover {
+  opacity: 0.85; /* Hiệu ứng mờ nhẹ khi di chuột vào */
+}
+
+/* Tạo hình tròn Avatar dạng chữ cái */
+.header__avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #00bfff, #007bff); /* Gradient màu xanh đồng bộ hệ thống */
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 15px;
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2); /* Đổ bóng nhẹ tạo chiều sâu */
+}
+
+/* Định dạng text hiển thị tên cạnh avatar */
+.user-name {
+  font-weight: 500;
+  font-size: 15px;
+}

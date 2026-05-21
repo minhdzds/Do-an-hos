@@ -76,34 +76,46 @@ export default function Header() {
               </li>
             </ul>
           </nav>
+          
           <div className="header__action">
-  {user ? (
-    <div className="header__user-info">
-      {/* Nút quay lại trang Quản lý chỉ hiện cho Admin */}
-      {user.role === 'admin' && (
-  <Link to="/admin/dashboard" className="btn--admin-nav" onClick={() => setIsDropdownOpen(false)}>
-    Admin Panel
-  </Link>
-)}
-{user.role === 'doctor' && (
-        <Link to="/doctor-dashboard" className="btn--admin-nav">
-          Doctor Panel
-        </Link>
-      )}
+            {user ? (
+              <div className="header__user-info">
+                {/* Nút quay lại trang Quản lý chỉ hiện cho Admin */}
+                {user.role === 'admin' && (
+                  <Link to="/admin/dashboard" className="btn--admin-nav">
+                    Admin Panel
+                  </Link>
+                )}
 
-      <span className="user-name">Chào, {user.full_name}</span>
-      
-      <button onClick={handleLogout} className="btn header__action--signup btn--logout-custom">
-        Log Out
-      </button>
-    </div>
-  ) : (
-    <>
-      <Link to="/login" className="header__action--login">Log In</Link>
-      <Link to="/signup" className="btn header__action--signup">Sign Up</Link>
-    </>
-  )}
-</div>
+                {/* Nút dành riêng cho Bác sĩ */}
+                {user.role === 'doctor' && (
+                  <Link to="/doctor-dashboard" className="btn--admin-nav">
+                    Doctor Panel
+                  </Link>
+                )}
+
+                {/* KHỐI AVATAR TRÒN + TÊN TỰ ĐỘNG CHUYỂN HƯỚNG SANG PROFILE KHI BẤM */}
+                <Link to={user.role === 'admin' ? '/admin/dashboard' : (user.role === 'doctor' ? '/doctor-dashboard' : '/profile')} 
+  className="header__profile-link"
+  title="Đi đến trang cá nhân"
+>
+  <div className="header__avatar">
+    {user.full_name ? user.full_name.charAt(0).toUpperCase() : 'U'}
+  </div>
+  <span className="user-name" style={{ cursor: 'pointer' }}>Chào, {user.full_name}</span>
+</Link>
+                
+                <button onClick={handleLogout} className="btn header__action--signup btn--logout-custom">
+                  Log Out
+                </button>
+              </div>
+            ) : (
+              <>
+                <Link to="/login" className="header__action--login">Log In</Link>
+                <Link to="/signup" className="btn header__action--signup">Sign Up</Link>
+              </>
+            )}
+          </div>
         </div>
 
         {isHome && (
